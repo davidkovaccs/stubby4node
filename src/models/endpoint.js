@@ -15,6 +15,7 @@ function Endpoint (endpoint, datadir) {
 
   this.request = purifyRequest(endpoint.request);
   this.response = purifyResponse(this, endpoint.response);
+  this.matchCallback = endpoint.matchCallback;
   this.hits = 0;
 }
 

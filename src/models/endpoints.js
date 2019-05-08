@@ -98,6 +98,11 @@ Endpoints.prototype.find = function (data, callback) {
     if (!captures) { continue; }
 
     endpoint.hits++;
+
+    if (endpoint.matchCallback != null && endpoint.matchCallback != undefined) {
+      endpoint.matchCallback();
+    }
+
     matched = clone(endpoint);
     return this.found(matched, captures, callback);
   }
